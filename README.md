@@ -1,53 +1,94 @@
-# hook_art
-```
+# hook art
+
+## 1. hook_art
+
+```text
 frida -U --no-pause -f package_name -l hook_art.js
 ```
 
-## show
+## 2. hook_RegisterNatives
+
+```text
+frida -U --no-pause -f package_name -l hook_RegisterNatives.js
 ```
-RegisterNatives] method_count: 0x2c
-[RegisterNatives] name: nativeSetCrashLogFilesUploaded sig: ()V fnPtr: 0xd494d568 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetForeground sig: (Z)V fnPtr: 0xd494d580 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetProcessType sig: (Z)V fnPtr: 0xd494d59c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeChangeState sig: (Ljava/lang/String;Ljava/lang/String;Z)Z fnPtr: 0xd494da74 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetCrashCustoms sig: (ZZIIIIZZZIZ)V fnPtr: 0xd494d5b8 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeUpdateSignals sig: (III)V fnPtr: 0xd494d678 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetZip sig: (ZLjava/lang/String;I)V fnPtr: 0xd494dc68 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetCrashLogFileNames sig: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494dcb4 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetFolderNames sig: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494dd30 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetProcessNames sig: (Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494ddd0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetVersionInfo sig: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494de28 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetLogStrategy sig: (ZZJ)V fnPtr: 0xd494d6a0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeGetNativeBuildseq sig: ()Ljava/lang/String; fnPtr: 0xd494d8ac module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeUpdateCrashLogNames sig: ()V fnPtr: 0xd494d6dc module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeAddHeaderInfo sig: (Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494deb8 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeAddDumpFile sig: (Ljava/lang/String;Ljava/lang/String;ZZZZZ)I fnPtr: 0xd494df0c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeAddCallbackInfo sig: (Ljava/lang/String;ZZJI)I fnPtr: 0xd494dfb0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeGetCallbackInfo sig: (Ljava/lang/String;JIZ)Ljava/lang/String; fnPtr: 0xd494e020 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeCreateCachedInfo sig: (Ljava/lang/String;I)Z fnPtr: 0xd494e0ac module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeAddCachedInfo sig: (Ljava/lang/String;Ljava/lang/String;)Z fnPtr: 0xd494e0f0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetPackageInfo sig: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494e14c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetMobileInfo sig: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494e1c8 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeInitNative sig: ()V fnPtr: 0xd494d4a0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeInstallBreakpad sig: (II)V fnPtr: 0xd494d4b4 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeUninstallBreakpad sig: ()V fnPtr: 0xd494d4d0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeBreakpadInited sig: (Ljava/lang/String;)V fnPtr: 0xd494d9e0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativePrepareUnexpInfos sig: (Z)V fnPtr: 0xd494d4e4 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeGenerateUnexpLog sig: (JI)I fnPtr: 0xd494d500 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeReserveFileHandle sig: (II)V fnPtr: 0xd494d7a4 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeRegisterCurrentThread sig: (Ljava/lang/String;)V fnPtr: 0xd494dbd0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeOpenFile sig: (Ljava/lang/String;)I fnPtr: 0xd494dc04 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeCloseFile sig: (I)V fnPtr: 0xd494d530 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeLockFile sig: (IZ)Z fnPtr: 0xd494d548 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeDumpThreads sig: (Ljava/lang/String;J)Ljava/lang/String; fnPtr: 0xd494f0fc module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeUpdateUnexpInfo sig: (I)V fnPtr: 0xd494d744 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSyncStatus sig: (Ljava/lang/String;Ljava/lang/String;I)Z fnPtr: 0xd494ea2c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSyncInfo sig: (Ljava/lang/String;Ljava/lang/String;JJ)Z fnPtr: 0xd494ec54 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeGetOrSetIsolatedHostFd sig: (II)I fnPtr: 0xd494d75c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeIsolateCreateConnection sig: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)J fnPtr: 0xd494ee40 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeIsolateWriteData sig: (JLjava/lang/String;)I fnPtr: 0xd494e46c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeIsolateCloseConnection sig: (J)V fnPtr: 0xd494d6f4 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeIsCrashing sig: ()Z fnPtr: 0xd494d51c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeLog sig: (ILjava/lang/String;Ljava/lang/String;)I fnPtr: 0xd494e244 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeCrash sig: (II)V fnPtr: 0xd494e864 module_name: libcrashsdk.so module_base: 0xd4948000
+
+### 2.1 show RegisterNatives
+
+```text
+only test android8.1.0(arm64), android9(arm64)
+```
+
+```text
+[RegisterNatives] method_count: 0x6
+[RegisterNatives] java_class: org.chromium.base.CommandLine name: nativeInit sig: ([Ljava/lang/String;)V fnPtr: 0xd44c4349 module_name: libcronet.76.0.3809.21.so module_base: 0xd4394000 offset: 0x130349
+[RegisterNatives] java_class: org.chromium.base.CommandLine name: nativeHasSwitch sig: (Ljava/lang/String;)Z fnPtr: 0xd44c4369 module_name: libcronet.76.0.3809.21.so module_base: 0xd4394000 offset: 0x130369
+[RegisterNatives] java_class: org.chromium.base.CommandLine name: nativeGetSwitchValue sig: (Ljava/lang/String;)Ljava/lang/String; fnPtr: 0xd44c43bd module_name: libcronet.76.0.3809.21.so module_base: 0xd4394000 offset: 0x1303bd
+```
+
+## 3 hook_artmethod
+
+### 3.1 init libext first time
+
+```text
+adb push lib/libext64.so /data/local/tmp/libext64.so
+adb push lib/libext.so /data/local/tmp/libext.so
+adb shell su -c "cp /data/local/tmp/libext64.so /data/app/libext64.so"
+adb shell su -c "cp /data/local/tmp/libext.so /data/app/libext.so"
+adb shell su -c "chown 1000.1000 /data/app/libext*.so"
+adb shell su -c "chmod 777 /data/app/libext*.so"
+adb shell su -c "ls -al /data/app/libext*"
+```
+
+### 3.2 use hook_artmethod.js
+
+```text
+frida -U --no-pause -f package_name -l hook_artmethod.js
+or
+frida -U --no-pause -f package_name -l hook_artmethod.js > hook_artmethod.log
+```
+
+### 3.3 show PrettyMethod
+
+```text
+     ____
+    / _  |   Frida 12.8.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   More info at https://www.frida.re/docs/home/
+Spawning `package_name`...
+Spawned `package_name`. Resuming main thread!
+[Google Pixel XL::package_name]-> void java.lang.Thread.<init>(java.lang.ThreadGroup, java.lang.String, int, boolean)
+void java.lang.ThreadGroup.add(java.lang.Thread)
+void java.lang.Thread.<init>(java.lang.ThreadGroup, java.lang.String, int, boolean)
+void java.lang.ThreadGroup.add(java.lang.Thread)
+void android.app.ActivityThread.main(java.lang.String[])
+void java.lang.ref.FinalizerReference.add(java.lang.Object)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+void java.lang.ref.FinalizerReference.add(java.lang.Object)
+void java.lang.ref.FinalizerReference.add(java.lang.Object)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+boolean android.os.Binder.execTransact(int, long, long, int)
+void java.lang.ref.FinalizerReference.add(java.lang.Object)
+void java.lang.ref.FinalizerReference.add(java.lang.Object)
+void java.lang.ref.FinalizerReference.add(java.lang.Object)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
 ```
